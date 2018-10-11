@@ -1,0 +1,2 @@
+cari jumlah bulan kelas
+SELECT TIMESTAMPDIFF(MONTH,tglbuka,tgltutup)+1 as 'Bulan' from 02_kelas
