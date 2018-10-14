@@ -43,7 +43,9 @@
                     	<div class="col-md-6">
                     		<div class="input-group date">
                       			<input type="text" class="form-control" placeholder="mm/dd/YYYY" id="tgllahir" name="tgllahir">
+
                     		</div>	
+                    		<small id="emailHelp" class="form-text text-muted">Tanggal lahir akan digunakan sebagai password standar, ingat selalu Password anda</small>
                     	</div>	
 	        		</div>
 	        		<br>

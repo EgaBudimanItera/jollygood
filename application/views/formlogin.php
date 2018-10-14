@@ -24,7 +24,8 @@
                     		<label for="exampleInputEmail1" class="pull-left">Password</label>
                     	</div>
                     	<div class="col-md-6">
-                    		<input type="password" class="form-control" value="" required="" name="password" placeholder="Password">	
+                    		<input type="password" class="form-control" value="" required="" name="password" placeholder="Password">
+                        <small id="emailHelp" class="form-text text-muted">We'll never share your email with anyone else.</small>	
                     	</div>	
 	        		</div>
 	        		<br>
