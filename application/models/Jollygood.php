@@ -21,7 +21,7 @@ class Jollygood extends CI_Model {
     }
 
     function cek_login($where){      
-        return $this->db->get_where('user',$where);
+        return $this->db->get_where('01_siswa',$where);
     }
 
     function list_data_where($param_id, $id, $table){
@@ -83,6 +83,26 @@ class Jollygood extends CI_Model {
         return $query =$this->db->get();
     }
 
+    function listpembayaran2($where){
+        $this->db->select('*')->from('04_pembayaran')->join('03_pendaftaran','04_pembayaran.kodependaftaran=03_pendaftaran.kodependaftaran')->join('01_siswa','04_pembayaran.kodesiswa=01_siswa.kodesiswa')->join('02_kelas','03_pendaftaran.kodekelas=02_kelas.kodekelas')->where($where);
+        return $query =$this->db->get();  
+    }
+
+    function listpendapatan($where){
+        $this->db->select('*')->from('05_pendapatan')->join('03_pendaftaran','04_pembayaran.kodependaftaran=03_pendaftaran.kodependaftaran')->join('01_siswa','04_pembayaran.kodesiswa=01_siswa.kodesiswa')->join('02_kelas','03_pendaftaran.kodekelas=02_kelas.kodekelas')->where($where);
+        return $query =$this->db->get();  
+    }
+
+    function listpendapatan2($d,$h){
+        $query="SELECT CONCAT(MONTH(a1.tanggal),'/',YEAR(a1.tanggal))AS bulangabung,MONTH(a1.tanggal) AS bulan,YEAR(a1.tanggal) AS tahun,(SELECT sum(jumlah) FROM 05_pendapatan a2 WHERE a2.keterangan='0' AND CONCAT(MONTH(a2.tanggal),'/',YEAR(a2.tanggal))=CONCAT(MONTH(a1.tanggal),'/',YEAR(a1.tanggal)) GROUP BY CONCAT(MONTH(a2.tanggal),'/',YEAR(a2.tanggal)))AS pendaftaran,(SELECT sum(jumlah) FROM 05_pendapatan a3 WHERE keterangan='1' AND CONCAT(MONTH(a3.tanggal),'/',YEAR(a3.tanggal))=CONCAT(MONTH(a1.tanggal),'/',YEAR(a1.tanggal))GROUP BY CONCAT(MONTH(a3.tanggal),'/',YEAR(a3.tanggal))) AS spp FROM 05_pendapatan a1 WHERE tanggal BETWEEN '$d' AND '$h' GROUP BY CONCAT(MONTH(a1.tanggal),'/',YEAR(a1.tanggal))";
+       return $this->db->query($query);
+    }
+
+    function listpembayaran3(){
+        $this->db->select('*')->from('04_pembayaran')->join('03_pendaftaran','04_pembayaran.kodependaftaran=03_pendaftaran.kodependaftaran')->join('01_siswa','04_pembayaran.kodesiswa=01_siswa.kodesiswa')->join('02_kelas','03_pendaftaran.kodekelas=02_kelas.kodekelas');
+        return $query =$this->db->get();  
+    }
+
     function listsiswabsdaftar(){
         $this->db->select('*')->from('01_siswa')->where(array('statusdaftar'=>'1','statusaktif'=>'1'));
         return $query =$this->db->get()->result();
@@ -91,6 +111,11 @@ class Jollygood extends CI_Model {
     function listkelasaktif(){
         $tglskr=date('Y-m-d');
         $this->db->select('*')->from('02_kelas')->where(array('tglbuka<='=>$tglskr,'tgltutup>='=>$tglskr));
+        return $query =$this->db->get()->result();
+    }
+
+    function listtagihan(){
+        $this->db->select('*')->from('04_pembayaran')->join('03_pendaftaran','04_pembayaran.kodependaftaran=03_pendaftaran.kodependaftaran')->join('01_siswa','03_pendaftaran.kodesiswa=01_siswa.kodesiswa')->join('02_kelas','03_pendaftaran.kodekelas=02_kelas.kodekelas')->where(array('status'=>'0'));
         return $query =$this->db->get()->result();
     }
 
@@ -154,11 +179,11 @@ class Jollygood extends CI_Model {
         return $kodejadi;
     }
 
-    function kodepembayaran(){
+    function kodebayar(){
         //JD-0718-0001
-        $this->db->select('Right(kodepembayaran,4) as kode',false);
+        $this->db->select('Right(kodebayar,4) as kode',false);
         
-        $this->db->order_by('kodepembayaran','desc');
+        $this->db->order_by('kodebayar','desc');
         $this->db->limit(1);
         $query = $this->db->get('04_pembayaran');
 

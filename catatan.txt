@@ -1,2 +1,15 @@
 cari jumlah bulan kelas
 SELECT TIMESTAMPDIFF(MONTH,tglbuka,tgltutup)+1 as 'Bulan' from 02_kelas
+
+
+select concat(MONTH(a1.tanggal),'/',YEAR(a1.tanggal))as bulan,
+(select sum(jumlah)
+from 05_pendapatan a2
+where a2.keterangan='0' and concat(MONTH(a2.tanggal),'/',YEAR(a2.tanggal))=concat(MONTH(a1.tanggal),'/',YEAR(a1.tanggal))
+group by concat(MONTH(a2.tanggal),'/',YEAR(a2.tanggal)))as pendaftaran,
+(select sum(jumlah)
+from 05_pendapatan a3
+where keterangan='1' and concat(MONTH(a3.tanggal),'/',YEAR(a3.tanggal))=concat(MONTH(a1.tanggal),'/',YEAR(a1.tanggal))
+group by concat(MONTH(a3.tanggal),'/',YEAR(a3.tanggal))) as spp
+from 05_pendapatan a1
+group by concat(MONTH(a1.tanggal),'/',YEAR(a1.tanggal))

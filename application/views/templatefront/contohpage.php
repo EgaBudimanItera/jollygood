@@ -5,7 +5,7 @@
     <div class="hero-container">
       <h1>Welcome to eStartup</h1>
       <h2>Elegant Bootstrap Template for Startups, Apps &amp; more...</h2>
-      <img src="img/hero-img.png" alt="Hero Imgs">
+      <img src="<?=base_url()?>assetsfront/img/hero-img.png" alt="Hero Imgs">
       <a href="#get-started" class="btn-get-started scrollto">Get Started</a>
       <div class="btns">
         <a href="#"><i class="fa fa-apple fa-3x"></i> App Store</a>

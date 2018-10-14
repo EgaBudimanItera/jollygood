@@ -46,7 +46,7 @@
           </ul>
         </li>
 
-        <li class="<?php if($link=='pendaftaran'||$link=="pembayaran"){echo'active';}?> treeview">
+        <li class="<?php if($link=='pendaftaran'||$link=="pembayaran"||$link=="tagihan"){echo'active';}?> treeview">
           <a href="#">
             <i class="fa fa-users"></i>
             <span>Data Transaksi</span>
@@ -56,20 +56,23 @@
           </a>
           <ul class="treeview-menu">
             <li class="<?php if($link=='pendaftaran'){echo'active';}?>"><a href="<?=base_url()?>pendaftaran"><i class="fa fa-gears"></i> Pendaftaran</a></li>
-            <li><a href="#"><i class="fa fa-gears"></i> Pembayaran</a></li>
+            <li class="<?php if($link=='tagihan'){echo'active';}?>"><a href="<?=base_url()?>tagihan"><i class="fa fa-gears"></i> Tagihan</a></li>
+            <li class="<?php if($link=='pembayaran'){echo'active';}?>"><a href="<?=base_url()?>pembayaran"><i class="fa fa-gears"></i> Pembayaran</a></li>
           </ul>
         </li>
 
-        <li class="treeview">
+        <li class="<?php if($link=='lappendapatandaftar'||$link=='lappendapatanspp'||$link=='lapgrafik'){echo'active';}?> treeview">
           <a href="#">
             <i class="fa fa-user-secret"></i>
-            <span>Laporan</span>
+            <span>Laporan Pendapatan</span>
             <span class="pull-right-container">
               <i class="fa fa-angle-left pull-right"></i>
             </span>
           </a>
           <ul class="treeview-menu">
-            <li><a href="#"><i class="fa fa-print"></i> Pendapatan</a></li>
+            <li class="<?php if($link=='lappendapatandaftar'){echo'active';}?>"><a href="<?=base_url()?>laporan/pospendaftaran"><i class="fa fa-print"></i> Pos Pendaftaran</a></li>
+            <li class="<?php if($link=='lappendapatanspp'){echo'active';}?>"><a href="<?=base_url()?>laporan/posspp"><i class="fa fa-print"></i> Pos Biaya Kursus Per Bulan</a></li>
+             <li class="<?php if($link=='lapgrafik'){echo'active';}?>"><a href="<?=base_url()?>laporan/lapgrafik"><i class="fa fa-print"></i> Grafik Pendapatan</a></li>
           </ul>
         </li>
       </ul>

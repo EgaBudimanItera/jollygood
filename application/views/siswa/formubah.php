@@ -34,11 +34,11 @@
                   </div>
                   <div class="form-group">
                     <label for="exampleInputEmail1">Nama Siswa</label>
-                    <input type="text" class="form-control" required="" value="<?=$list->namasiswa?>" name="namasiswa" placeholder="Nama Siswa">
+                    <input type="text" class="form-control"  value="<?=$list->namasiswa?>" name="namasiswa" placeholder="Nama Siswa">
                   </div>
                   <div class="form-group">
                     <label for="exampleInputEmail1">Jenis Kelamin</label>
-                    <select class="form-control" required="" name="jk" style="width: 100%;">
+                    <select class="form-control"  name="jk" style="width: 100%;">
                       <option value="">--Pilih Jenis Kelamin--</option> 
                       <option value="0" <?=$list->jk == '0' ? ' selected="selected"' : '';?>>Laki-Laki</option>
                       <option value="1" <?=$list->jk == '1' ? ' selected="selected"' : '';?>>Perempuan</option>
@@ -46,7 +46,7 @@
                   </div>
                   <div class="form-group">
                     <label for="exampleInputEmail1">Tempat Lahir</label>
-                    <input type="text" class="form-control" required="" value="<?=$list->tmplahir?>" name="tmplahir" placeholder="Tempat Lahir">
+                    <input type="text" class="form-control" value="<?=$list->tmplahir?>" name="tmplahir" placeholder="Tempat Lahir">
                   </div>
                   <div class="form-group">
                     <label for="exampleInputEmail1">Tanggal Lahir</label>
@@ -63,7 +63,7 @@
                 <div class="col-md-5">
                   <div class="form-group">
                     <label for="exampleInputEmail1">No Hp</label>
-                    <input type="text" class="form-control" required="" value="<?=$list->nohp?>" name="nohp" placeholder="No Hp">
+                    <input type="text" class="form-control"  value="<?=$list->nohp?>" name="nohp" placeholder="No Hp">
                   </div>
                   <div class="form-group">
                     <label for="exampleInputEmail1">Alamat</label>
@@ -75,16 +75,16 @@
                   </div>
                   <div class="form-group">
                     <label for="exampleInputEmail1">Status Pendaftaran</label>
-                    <select class="form-control" required="" name="jk" style="width: 100%;">
-                      <option value="">--Pilih Jenis Kelamin--</option> 
+                    <select class="form-control"  name="statusdaftar" style="width: 100%;">
+                      <option value="">--Pilih Status Daftar--</option> 
                       <option value="0" <?=$list->statusdaftar == '0' ? ' selected="selected"' : '';?>>Calon Siswa</option>
                       <option value="1" <?=$list->statusdaftar == '1' ? ' selected="selected"' : '';?>>Siswa</option>
                     </select>
                   </div>
                   <div class="form-group">
                     <label for="exampleInputEmail1">Status Keaktifan</label>
-                    <select class="form-control" required="" name="jk" style="width: 100%;">
-                      <option value="">--Pilih Jenis Kelamin--</option> 
+                    <select class="form-control"  name="statusaktif" style="width: 100%;">
+                      <option value="">--Pilih Status Keaktifan--</option> 
                       <option value="0" <?=$list->statusaktif == '0' ? ' selected="selected"' : '';?>>Non Aktif</option>
                       <option value="1" <?=$list->statusaktif == '1' ? ' selected="selected"' : '';?>>Aktif</option>
                     </select>

@@ -7,16 +7,16 @@ class Siswa extends CI_Controller {
 	public function __construct(){
 		parent::__construct();
 		$this->load->model(array('Jollygood'));
-        // if($this->session->userdata('status') != "login"){
-        //     echo '<script>alert("Maaf, anda harus login terlebih dahulu");window.location = "'.base_url().'";</script>';
-        // }else{
-        //     $userNama = $this->session->userdata('userNama');
-        //     $where=array('userNama'=>$userNama);
-        //     $cek=$this->Museraplikasi->cek_login($where)->num_rows(); 
-        //     if($cek == 0){
-        //         echo '<script>alert("User tidak ditemukan di database");window.location = "'.base_url().'";</script>';
-        //     }
-        // }   
+        if($this->session->userdata('status') != "login"){
+             echo '<script>alert("Maaf, anda harus login terlebih dahulu");window.location = "'.base_url().'admin";</script>';
+        }else{
+            $username = $this->session->userdata('username');
+            $where=array('username'=>$username);
+            $cek=$this->Jollygood->cek_login($where)->num_rows(); 
+            if($cek == 0){
+                echo '<script>alert("User tidak ditemukan di database");window.location = "'.base_url().'admin";</script>';
+            }
+        }    
 	}
    
     public function index(){
@@ -106,24 +106,7 @@ class Siswa extends CI_Controller {
 
     }
 
-    public function prosessimpansiswa(){
-        $data=array(
-            'kodesiswa'=>$this->Jollygood->kodesiswa(),
-            'namasiswa'=>$this->input->post('namasiswa',true),
-            'tgllahir'=>date_format(date_create($this->input->post('tgllahir',true)),'Y-m-d'),
-            'username'=>$this->input->post('username',true),
-            'password'=>date_format(date_create($this->input->post('tgllahir',true)),'Y-m-d'),
-            'statusdaftar'=>'0',
-            'statusaktif'=>'0',
-        );
-        $simpan=$this->Jollygood->simpan_data($data,'01_siswa');
-        if($simpan){
-            echo '<script>alert("Data Berhasil Disimpan !! Silahkan Tunggu Verifikasi Admin 1x24 jam");window.location = "'.base_url().'siswa";</script>';
-        }else{
-            echo '<script>alert("Data Gagal Disimpan");window.location = "'.base_url().'siswa/formtambah";</script>';
-        }
-
-    }
+    
 
     public function prosesubahadmin(){
         $kodesiswa=$this->input->post('kodesiswa',true);
@@ -134,6 +117,8 @@ class Siswa extends CI_Controller {
             'alamat'=>$this->input->post('alamat',true),
             'tgllahir'=>date_format(date_create($this->input->post('tgllahir',true)),'Y-m-d'),
             'nohp'=>$this->input->post('nohp',true),
+            'statusdaftar'=>$this->input->post('statusdaftar',true),
+            'statusaktif'=>$this->input->post('statusaktif',true),
         );
         $ubah=$this->Jollygood->update('kodesiswa',$kodesiswa,$data,'01_siswa');
         if($ubah){

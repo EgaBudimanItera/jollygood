@@ -9,8 +9,8 @@
         <div class="col-md-12 col-lg-4">
           <div class="footer-logo">
 
-            <a class="navbar-brand" href="#">eStartup</a>
-            <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the.</p>
+            <a class="navbar-brand" href="#">Jolly Good English</a>
+            <p>English Enrichment</p>
 
           </div>
         </div>
@@ -18,14 +18,14 @@
         <div class="col-sm-6 col-md-3 col-lg-2">
           <div class="list-menu">
 
-            <h4>Abou Us</h4>
+            <!-- <h4>Abou Us</h4>
 
             <ul class="list-unstyled">
               <li><a href="#">About us</a></li>
               <li><a href="#">Features item</a></li>
               <li><a href="#">Live streaming</a></li>
               <li><a href="#">Privacy Policy</a></li>
-            </ul>
+            </ul> -->
 
           </div>
         </div>
@@ -33,14 +33,14 @@
         <div class="col-sm-6 col-md-3 col-lg-2">
           <div class="list-menu">
 
-            <h4>Abou Us</h4>
+            <!-- <h4>Abou Us</h4>
 
             <ul class="list-unstyled">
               <li><a href="#">About us</a></li>
               <li><a href="#">Features item</a></li>
               <li><a href="#">Live streaming</a></li>
               <li><a href="#">Privacy Policy</a></li>
-            </ul>
+            </ul> -->
 
           </div>
         </div>
@@ -48,14 +48,14 @@
         <div class="col-sm-6 col-md-3 col-lg-2">
           <div class="list-menu">
 
-            <h4>Support</h4>
+            <!-- <h4>Support</h4>
 
             <ul class="list-unstyled">
               <li><a href="#">faq</a></li>
               <li><a href="#">Editor help</a></li>
               <li><a href="#">Contact us</a></li>
               <li><a href="#">Privacy Policy</a></li>
-            </ul>
+            </ul> -->
 
           </div>
         </div>
@@ -63,14 +63,14 @@
         <div class="col-sm-6 col-md-3 col-lg-2">
           <div class="list-menu">
 
-            <h4>Abou Us</h4>
+            <!-- <h4>Abou Us</h4>
 
             <ul class="list-unstyled">
               <li><a href="#">About us</a></li>
               <li><a href="#">Features item</a></li>
               <li><a href="#">Live streaming</a></li>
               <li><a href="#">Privacy Policy</a></li>
-            </ul>
+            </ul> -->
 
           </div>
         </div>
@@ -80,7 +80,7 @@
 
     <div class="copyrights">
       <div class="container">
-        <p>&copy; Copyrights eStartup. All rights reserved.</p>
+        <p>&copy; Copyrights Jolly Good English. All rights reserved.</p>
         <div class="credits">
           <!--
             All the links in the footer should remain intact.
@@ -88,7 +88,7 @@
             Licensing information: https://bootstrapmade.com/license/
             Purchase the pro version with working PHP/AJAX contact form: https://bootstrapmade.com/buy/?theme=eStartup
           -->
-          Designed by <a href="https://bootstrapmade.com/">BootstrapMade</a>
+          Designed by <a href="#/">Jolly Good English</a>
         </div>
       </div>
     </div>

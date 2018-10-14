@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
   <meta charset="utf-8">
-  <title>eStartup Bootstrap Template</title>
+  <title>Jolly Good English</title>
   <meta content="width=device-width, initial-scale=1.0" name="viewport">
   <meta content="" name="keywords">
   <meta content="" name="description">
@@ -50,11 +50,11 @@
 
       <nav id="nav-menu-container">
         <ul class="nav-menu">
-          <li class="menu-active"><a href="#hero">Beranda</a></li>
-          <li><a href="#about-us">Tentang Kami</a></li>
-          <li><a href="#features">Program Kursus</a></li>
-          <li><a href="#screenshots">Pendaftaran Siswa</a></li>
-          <li><a href="#contact">Login Siswa</a></li>
+           <li class="<?php if($link=='beranda'){echo "menu-active";}?>"><a href="<?=base_url()?>beranda">Beranda</a></li>
+          <!-- <li><a href="#about-us">Tentang Kami</a></li>
+          <li><a href="#features">Program Kursus</a></li> -->
+          <li class="<?php if($link=='daftarsiswa'){echo "menu-active";}?>"><a href="<?=base_url()?>beranda/daftarsiswa">Pendaftaran Siswa</a></li>
+          <li class="<?php if($link=='formlogin'){echo "menu-active";}?>"><a href="<?=base_url()?>beranda/formlogin">Login Siswa</a></li>
         </ul>
       </nav><!-- #nav-menu-container -->
 

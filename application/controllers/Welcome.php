@@ -21,7 +21,8 @@ class Welcome extends CI_Controller {
 	public function index()
 	{
 		$data=array(
-		  'page'=>'templatefront/contohpage'
+		  'page'=>'templatefront/contohpage',
+		  'link'=>''
 		);
 		$this->load->view('templatefront/header',$data);
 		$this->load->view('templatefront/content');
