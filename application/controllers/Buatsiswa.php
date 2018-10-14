@@ -124,6 +124,35 @@ class Buatsiswa extends CI_Controller {
 
     }
 
+    public function formubahpassword(){
+        $data = array(
+            'page' => 'buatsiswa/formubahpassword',
+            'link' => '',
+            'script'=>'',
+            'list'=>'',
+            'breadcrumb' => array(
+                'Beranda' => base_url() . 'berandaadmin',
+                'Ubah Password' => base_url() . 'buatsiswa/formubahpassword'),
+        );
+        $this->load->view('templatebuatsiswa/header',$data);
+        $this->load->view('templatebuatsiswa/sidebarsiswa');
+        $this->load->view('templatebuatsiswa/content');
+        $this->load->view('templatebuatsiswa/footer');
+    }
+
+    public function ubahpassword(){
+        $kodesiswa=$this->input->post('kodesiswa',true);
+        $data=array(
+            'password'=>$this->input->post('password',true),
+        );
+        $ubah=$this->Jollygood->update('kodesiswa',$kodesiswa,$data,'01_siswa');
+        if($ubah){
+             echo '<script>alert("Ubah Password Berhasil, Silahkan melakukan proses login kembali!");window.location = "'.base_url().'buatsiswa/logoutsiswa";</script>';
+        }else{
+             echo '<script>alert("Ubah Password Gagak, Silahkan melakukan proses login kembali!");window.location = "'.base_url().'buatsiswa/logoutsiswa";</script>';
+        }
+    }
+
     public function logoutsiswa(){
         $this->session->sess_destroy();
         echo '<script>alert("Terima Kasih!");window.location = "'.base_url().'";</script>';

@@ -24,6 +24,10 @@ class Jollygood extends CI_Model {
         return $this->db->get_where('01_siswa',$where);
     }
 
+    function cek_loginadmin($where){      
+        return $this->db->get_where('06_admin',$where);
+    }
+
     function list_data_where($param_id, $id, $table){
        return $this->db->get_where($table, array($param_id => $id));
     }

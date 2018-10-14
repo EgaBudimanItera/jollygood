@@ -277,10 +277,10 @@
               <!-- Menu Footer-->
               <li class="user-footer">
                 <div class="pull-left">
-                  <a href="<?=base_url()?>useraplikasi/formubahpassword" class="btn btn-default btn-flat">Ganti Password</a>
+                  <a href="<?=base_url()?>admin/formubahpassword" class="btn btn-default btn-flat">Ganti Password</a>
                 </div>
                 <div class="pull-right">
-                  <a href="<?=base_url()?>useraplikasi/logout" onclick="return confirm('Anda yakin akan keluar dari sistem?')" class="btn btn-default btn-flat">Log out</a>
+                  <a href="<?=base_url()?>admin/logoutadmin" onclick="return confirm('Anda yakin akan keluar dari sistem?')" class="btn btn-default btn-flat">Log out</a>
                 </div>
               </li>
             </ul>

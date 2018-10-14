@@ -36,9 +36,9 @@
   <div class="login-box-body">
     <p class="login-box-msg">Silahkan Login Untuk Memulai Menggunakan Aplikasi Pendapatan</p>
 
-    <form action="<?=base_url()?>auth/authuser" method="post">
+    <form action="<?=base_url()?>admin/proseslogin" method="post">
       <div class="form-group has-feedback">
-        <input type="text" class="form-control" placeholder="Nama User" name="nama">
+        <input type="text" class="form-control" placeholder="Nama User" name="username">
         <span class="glyphicon glyphicon-envelope form-control-feedback"></span>
       </div>
       <div class="form-group has-feedback">

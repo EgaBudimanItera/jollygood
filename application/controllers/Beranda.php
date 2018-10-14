@@ -80,28 +80,28 @@ class Beranda extends CI_Controller {
 
 	public function proseslogin(){
 		$username=$this->input->post('username',true);
-        $password=$this->input->post('password',true);
-        $where=array(
-              'username'=>$username,
-              'password'=>$password,
-              'statusdaftar'=>'1',
-        );
-        $cek=$this->Jollygood->cek_login($where)->num_rows(); 
-        if($cek!=0){
-          $data_session = array(
-              'username' => $username,
-              'hakakses'=>'Siswa',
-              'kodesiswa'=>$this->Jollygood->cek_login($where)->row()->kodesiswa,
-              'status' => "login",
-          );
+    $password=$this->input->post('password',true);
+    $where=array(
+          'username'=>$username,
+          'password'=>$password,
+          'statusdaftar'=>'1',
+    );
+    $cek=$this->Jollygood->cek_login($where)->num_rows(); 
+    if($cek!=0){
+      $data_session = array(
+          'username' => $username,
+          'hakakses'=>'Siswa',
+          'kodesiswa'=>$this->Jollygood->cek_login($where)->row()->kodesiswa,
+          'status' => "login",
+      );
 
-          $this->session->set_userdata($data_session);
-          echo '<script>alert("user ditemukan!");window.location = "'.base_url().'buatsiswa";</script>';
-          
-        }
-        else{
-          echo '<script>alert("Maaf, username atau password salah!");window.location = "'.base_url().'beranda/formlogin";</script>';
-          
-        }   
+      $this->session->set_userdata($data_session);
+      echo '<script>alert("user ditemukan!");window.location = "'.base_url().'buatsiswa";</script>';
+      
+    }
+    else{
+      echo '<script>alert("Maaf, username atau password salah!");window.location = "'.base_url().'beranda/formlogin";</script>';
+      
+    }   
 	}
 }

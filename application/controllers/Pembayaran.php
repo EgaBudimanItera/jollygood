@@ -12,7 +12,7 @@ class Pembayaran extends CI_Controller {
         }else{
             $username = $this->session->userdata('username');
             $where=array('username'=>$username);
-            $cek=$this->Jollygood->cek_login($where)->num_rows(); 
+            $cek=$this->Jollygood->cek_loginadmin($where)->num_rows(); 
             if($cek == 0){
                 echo '<script>alert("User tidak ditemukan di database");window.location = "'.base_url().'admin";</script>';
             }
