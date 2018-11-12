@@ -7,16 +7,16 @@ class Pembayaran extends CI_Controller {
 	public function __construct(){
 		parent::__construct();
 		$this->load->model(array('Jollygood'));
-        if($this->session->userdata('status') != "login"){
-             echo '<script>alert("Maaf, anda harus login terlebih dahulu");window.location = "'.base_url().'admin";</script>';
-        }else{
-            $username = $this->session->userdata('username');
-            $where=array('username'=>$username);
-            $cek=$this->Jollygood->cek_loginadmin($where)->num_rows(); 
-            if($cek == 0){
-                echo '<script>alert("User tidak ditemukan di database");window.location = "'.base_url().'admin";</script>';
-            }
-        }    
+         if($this->session->userdata('status') != "login"){
+              echo '<script>alert("Maaf, anda harus login terlebih dahulu");window.location = "'.base_url().'admin";</script>';
+         }else{
+             $username = $this->session->userdata('username');
+             $where=array('username'=>$username);
+             $cek=$this->Jollygood->cek_loginadmin($where)->num_rows(); 
+             if($cek == 0){
+                 echo '<script>alert("User tidak ditemukan di database");window.location = "'.base_url().'admin";</script>';
+             }
+         }    
 	}
    
     public function index(){
@@ -80,6 +80,18 @@ class Pembayaran extends CI_Controller {
       // read file contents
       $data = file_get_contents(base_url('/file_upload/'.$filename));
       force_download($filename, $data);
+    }
+
+    public function nota($kodebayar){
+        $where=array('kodebayar'=>$kodebayar);
+        $list=$this->Jollygood->listpembayaran2($where)->row();
+        $terbilang=$this->Jollygood->terbilang($list->jumlah);
+        $data=array(
+            'list'=>$list,
+            'terbilang'=>$terbilang,
+        );
+        $this->load->view('pembayaran/nota',$data);
+       
     }
 
     public function prosesverifikasi($kodebayar,$kodesiswa,$jumlah){

@@ -1,3 +1,5 @@
+
+
 <!--Content Wrapper. Contains page content -->
   <div class="content-wrapper">
     <!-- Content Header (Page header) -->
@@ -25,6 +27,8 @@
             
             <div id="info-alert"><?=@$this->session->flashdata('msg')?></div>
             <!-- /.box-header -->
+            
+
             <form action="<?=base_url()?>buatsiswa/prosesubah" role="form" method="post" class="form-horizontal">
                <div class="box-body">
                 <div class="col-md-5">

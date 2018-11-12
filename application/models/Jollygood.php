@@ -32,6 +32,10 @@ class Jollygood extends CI_Model {
        return $this->db->get_where($table, array($param_id => $id));
     }
 
+    function listwhere($table,$where){
+       return $this->db->get_where($table, $where);
+    }
+
     function count($table){
         return $query = $this->db->get($table);
     }

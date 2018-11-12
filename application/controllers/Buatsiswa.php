@@ -7,20 +7,24 @@ class Buatsiswa extends CI_Controller {
 	public function __construct(){
 		parent::__construct();
 		$this->load->model(array('Jollygood'));
-        if($this->session->userdata('status') != "login"){
-             echo '<script>alert("Maaf, anda harus login terlebih dahulu");window.location = "'.base_url().'";</script>';
-        }else{
-            $username = $this->session->userdata('username');
-            $where=array('username'=>$username);
-            $cek=$this->Jollygood->cek_login($where)->num_rows(); 
-            if($cek == 0){
-                echo '<script>alert("User tidak ditemukan di database");window.location = "'.base_url().'";</script>';
-            }
-        }   
+         if($this->session->userdata('status') != "login"){
+              echo '<script>alert("Maaf, anda harus login terlebih dahulu");window.location = "'.base_url().'";</script>';
+         }else{
+             $username = $this->session->userdata('username');
+             $where=array('username'=>$username);
+             $cek=$this->Jollygood->cek_login($where)->num_rows(); 
+             if($cek == 0){
+                 echo '<script>alert("User tidak ditemukan di database");window.location = "'.base_url().'";</script>';
+             }
+         }   
 	}
    
     public function index(){
         $kodesiswa = $this->session->userdata('kodesiswa');
+        $where=array(
+          'kodesiswa'=>$kodesiswa,
+          'status'=>'0'
+        );
         $data = array(
             'page' => 'buatsiswa/profilsiswa',
             'link' => 'profil',
@@ -29,7 +33,9 @@ class Buatsiswa extends CI_Controller {
             'breadcrumb' => array(
                 'Profil' => base_url() . 'buatsiswa',
             ),
+            'status'=>$this->Jollygood->listwhere('04_pembayaran',$where)->num_rows(),
         );
+
         $this->load->view('templatebuatsiswa/header',$data);
         $this->load->view('templatebuatsiswa/sidebarsiswa');
         $this->load->view('templatebuatsiswa/content');
@@ -41,6 +47,10 @@ class Buatsiswa extends CI_Controller {
         $where=array(
             '04_pembayaran.kodesiswa'=>$kodesiswa,
         );
+        $where2=array(
+          'status'=>'0',
+           'kodesiswa'=>$kodesiswa,
+        );
         $data = array(
             'page' => 'buatsiswa/datapembayaran',
             'link' => 'pembayaran',
@@ -49,6 +59,7 @@ class Buatsiswa extends CI_Controller {
             'breadcrumb' => array(
                 'Pembayaran Biaya Kursus' => base_url() . 'formpembayaran',
             ),
+            'status'=>$this->Jollygood->listwhere('04_pembayaran',$where2)->num_rows(),
         );
         $this->load->view('templatebuatsiswa/header',$data);
         $this->load->view('templatebuatsiswa/sidebarsiswa');
@@ -66,6 +77,7 @@ class Buatsiswa extends CI_Controller {
             'breadcrumb' => array(
                 'Upload Bukti Bayar' => base_url() . 'formupload',
             ),
+            'status'=>$this->Jollygood->listwhere('04_pembayaran',$where)->num_rows(),
         );
         $this->load->view('templatebuatsiswa/header',$data);
         $this->load->view('templatebuatsiswa/sidebarsiswa');

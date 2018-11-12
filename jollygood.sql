@@ -36,6 +36,8 @@ CREATE TABLE `01_siswa` (
 
 /*Data for the table `01_siswa` */
 
+insert  into `01_siswa`(`kodesiswa`,`namasiswa`,`jk`,`tmplahir`,`tgllahir`,`alamat`,`nohp`,`username`,`password`,`statusdaftar`,`statusaktif`) values ('JS-0000001','watik ','','','2018-10-16','','','ester','2018-10-16','1','1');
+
 /*Table structure for table `02_kelas` */
 
 DROP TABLE IF EXISTS `02_kelas`;
@@ -52,6 +54,8 @@ CREATE TABLE `02_kelas` (
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 /*Data for the table `02_kelas` */
+
+insert  into `02_kelas`(`kodekelas`,`namakelas`,`tglbuka`,`tgltutup`,`biayadaftar`,`biayabulanan`,`jumlahsiswa`) values ('JK-0000001','level 1','2018-10-01','2018-10-31',10000,20000,NULL);
 
 /*Table structure for table `03_pendaftaran` */
 
@@ -102,6 +106,22 @@ CREATE TABLE `05_pendapatan` (
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 /*Data for the table `05_pendapatan` */
+
+/*Table structure for table `06_admin` */
+
+DROP TABLE IF EXISTS `06_admin`;
+
+CREATE TABLE `06_admin` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `username` varchar(30) DEFAULT NULL,
+  `password` varchar(30) DEFAULT NULL,
+  `hakakses` enum('Admin','Pimpinan') DEFAULT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=latin1;
+
+/*Data for the table `06_admin` */
+
+insert  into `06_admin`(`id`,`username`,`password`,`hakakses`) values (1,'admin','123','Admin'),(2,'pimpinan','123','Pimpinan');
 
 /*!40101 SET SQL_MODE=@OLD_SQL_MODE */;
 /*!40014 SET FOREIGN_KEY_CHECKS=@OLD_FOREIGN_KEY_CHECKS */;

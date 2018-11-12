@@ -22,12 +22,12 @@ Content Wrapper. Contains page content -->
             <div class="inner">
               <h3></h3>
 
-              <p>Produksi</p>
+              <p>Jumlah Siswa Aktif</p>
             </div>
             <div class="icon">
               <i class="ion ion-bag"></i>
             </div>
-            <a href="#" class="small-box-footer">On Progress <i class="fa fa-arrow-circle-right"></i></a> 
+            <a href="#" class="small-box-footer">Siswa Aktif <i class="fa fa-arrow-circle-right"></i></a> 
           </div>
         </div>
         <!-- ./col -->
@@ -37,12 +37,12 @@ Content Wrapper. Contains page content -->
             <div class="inner">
               <h3></h3>
 
-              <p>Produksi</p>
+              <p>Pos Pendaftaran</p>
             </div>
             <div class="icon">
               <i class="ion ion-stats-bars"></i>
             </div>
-            <a href="#" class="small-box-footer">Selesai <i class="fa fa-arrow-circle-right"></i></a>
+            <a href="#" class="small-box-footer">Pendapatan <i class="fa fa-arrow-circle-right"></i></a>
           </div>
         </div>
         <!-- ./col -->
@@ -52,19 +52,19 @@ Content Wrapper. Contains page content -->
             <div class="inner">
               <h3></h3>
 
-              <p>Produksi</p>
+              <p>Pos Bulanan</p>
             </div>
             <div class="icon">
               <i class="ion ion-person-add"></i>
             </div>
-            <a href="#" class="small-box-footer">Transfer <i class="fa fa-arrow-circle-right"></i></a>
+            <a href="#" class="small-box-footer">Pendapatan <i class="fa fa-arrow-circle-right"></i></a>
           </div>
         </div>
         <!-- ./col --> 
       </div>
       <br>
       <div class="row">
-        <center>aa</center>
+        <center></center>
       </div>
     </section>
     <!-- /.content -->

@@ -77,6 +77,11 @@
                         <a data-toggle="tooltip" data-placement="bottom" title="Download BuktiBayar" class="btn btn-primary btn-xs" href="<?=base_url()?>pembayaran/download/<?=$l->file?>"><i class="fa fa-download"></i></a>
                         <?php
                           }
+                          if($l->status!=0){
+                        ?>
+                        <a data-toggle="tooltip" data-placement="bottom" title="Print Nota" target="_blank"class="btn btn-warning btn-xs" href="<?=base_url()?>pembayaran/nota/<?=$l->kodebayar?>"><i class="fa fa-print"></i></a>
+                        <?php
+                          }
                         ?>
                         <?php 
                           if($l->status=='0'){

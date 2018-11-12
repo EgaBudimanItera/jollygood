@@ -46,4 +46,16 @@
             }
         });
     };
+    function ambilbiaya3(){
+        var kodekelas=$('#kodekelas').val();
+        $.ajax({
+            type: 'POST',
+            url: '<?=base_url()?>tagihan/getbiaya2',
+            data: 'kodekelas='+kodekelas,
+            dataType: 'JSON',
+            success: function(msg){
+                $('#jumlah').val(msg.biayabulanan);
+            }
+        });
+    };
 </script>

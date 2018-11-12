@@ -52,8 +52,15 @@
                       </div>
                       <div class="form-group">
                         <label>Nama Kelas</label>
-                        <select class="form-control" name="kodependaftaran" onchange="ambilbiaya()" id="kodependaftaran" required>
+                        <select class="form-control" name="kodekelas" onchange="ambilbiaya3()" id="kodekelas" required>
                           <option value="">--Pilih Kelas--</option>
+                          <?php
+                            foreach($kelas as $k){
+                          ?>
+                          <option value="<?=$k->kodekelas?>"><?=$k->namakelas?></option>
+                          <?php
+                            }
+                          ?>
                         </select>
                       </div>
                       <div class="form-group">

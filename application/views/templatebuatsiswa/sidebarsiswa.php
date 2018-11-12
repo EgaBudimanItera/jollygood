@@ -1,5 +1,6 @@
 <?php
   $hakakses=$this->session->userdata('hakakses');
+
 ?>
 <!-- Left side column. contains the logo and sidebar -->
   <aside class="main-sidebar">
@@ -20,10 +21,23 @@
       <ul class="sidebar-menu" data-widget="tree">
         <li class="header">NAVIGATION</li>
         <li class="<?php if($link=='profil'){echo'active';}?>">
-          <a href="<?=base_url()?>buatsiswa"><i class="fa fa-user"></i> Profil Siswa</a>
+          <a href="<?=base_url()?>buatsiswa"><i class="fa fa-user"></i> Profil Siswa;</a>
         </li>
         <li class="<?php if($link=='pembayaran'){echo'active';}?>">
-          <a href="<?=base_url()?>buatsiswa/formpembayaran"><i class="fa fa-user"></i> Pembayaran Kursus</a>
+          <a href="<?=base_url()?>buatsiswa/formpembayaran"><i class="fa fa-user"></i> 
+            Pembayaran Kursus
+            <?php 
+            if($status==0){
+            ?>
+             
+            <?php
+            }else{
+            ?>
+             &nbsp&nbsp<i class="fa fa-exclamation" aria-hidden="true"></i> 
+            <?php
+            }
+            ?>
+          </a>
         </li>
       </ul>
     </section>
